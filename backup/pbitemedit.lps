@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="pbitemedit.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="25"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ubitemedit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="259"/>
+        <CursorPos X="25" Y="258"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\b_dialog_editor\udialogeditor.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="566"/>
+        <CursorPos Y="684"/>
+        <UsageCount Value="10"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="289" Column="3" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="275" Column="3" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="280" Column="3" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="275" Column="3" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="108" Column="15" TopLine="315"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="109" Column="15" TopLine="109"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="108" Column="15" TopLine="108"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="129" Column="81" TopLine="108"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="174" Column="3" TopLine="172"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="175" Column="16" TopLine="173"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="163" Column="16" TopLine="160"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="181" Column="16" TopLine="160"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="276" Column="3" TopLine="274"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="181" Column="3" TopLine="179"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="176" Column="3" TopLine="174"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="168" Column="3" TopLine="166"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="289" Column="3" TopLine="287"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="172" Column="16" TopLine="166"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="158" Column="16" TopLine="155"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="94" Column="15" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="236" Column="55" TopLine="217"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="235" Column="55" TopLine="216"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="234" Column="55" TopLine="215"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="235" Column="39" TopLine="300"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="162" Column="3" TopLine="160"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="106" Column="15" TopLine="193"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="290" Column="3" TopLine="288"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="351" TopLine="313"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="373" Column="121" TopLine="356"/>
+      </Position>
+      <Position>
+        <Filename Value="ubitemedit.pas"/>
+        <Caret Line="340" Column="25" TopLine="313"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

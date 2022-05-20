@@ -1,0 +1,660 @@
+object Form1: TForm1
+  Left = 105
+  Height = 793
+  Top = 54
+  Width = 1177
+  Caption = 'br0ken c0de Item Editor'
+  ClientHeight = 793
+  ClientWidth = 1177
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object memoPreview: TMemo
+    Left = 889
+    Height = 727
+    Top = 66
+    Width = 288
+    Align = alRight
+    ScrollBars = ssBoth
+    TabOrder = 0
+    WordWrap = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 66
+    Top = 0
+    Width = 1177
+    Align = alTop
+    AutoSize = True
+    Caption = 'Data Path and Item SIze'
+    ClientHeight = 46
+    ClientWidth = 1173
+    TabOrder = 1
+    object edtSetSize: TEdit
+      Left = 0
+      Height = 23
+      Top = 23
+      Width = 1173
+      Align = alTop
+      TabOrder = 0
+      Text = '25'
+    end
+    object edtPath: TEdit
+      Left = 0
+      Height = 23
+      Top = 0
+      Width = 1173
+      Align = alTop
+      TabOrder = 1
+      Text = 'path'
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 727
+    Top = 66
+    Width = 889
+    Align = alClient
+    ClientHeight = 727
+    ClientWidth = 889
+    TabOrder = 2
+    object lbName: TListBox
+      Left = 1
+      Height = 725
+      Top = 1
+      Width = 252
+      Align = alLeft
+      ItemHeight = 0
+      OnClick = lbNameClick
+      ScrollWidth = 5
+      TabOrder = 0
+    end
+    object GroupBox2: TGroupBox
+      Left = 253
+      Height = 725
+      Top = 1
+      Width = 635
+      Align = alClient
+      Caption = 'Item Data'
+      ClientHeight = 705
+      ClientWidth = 631
+      TabOrder = 1
+      object Panel2: TPanel
+        Left = 0
+        Height = 655
+        Top = 0
+        Width = 256
+        Align = alLeft
+        ClientHeight = 655
+        ClientWidth = 256
+        TabOrder = 0
+        object edCritBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 582
+          Width = 254
+          Align = alTop
+          TabOrder = 0
+          Text = '0'
+        end
+        object Label1: TLabel
+          Left = 1
+          Height = 15
+          Top = 1
+          Width = 254
+          Align = alTop
+          Caption = 'NAME'
+        end
+        object edName: TEdit
+          Left = 1
+          Height = 23
+          Top = 16
+          Width = 254
+          Align = alTop
+          TabOrder = 1
+          Text = 'edtName'
+        end
+        object Label2: TLabel
+          Left = 1
+          Height = 15
+          Top = 39
+          Width = 254
+          Align = alTop
+          Caption = 'Category'
+        end
+        object cbCategory: TComboBox
+          Left = 1
+          Height = 23
+          Top = 54
+          Width = 254
+          Align = alTop
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'quest'
+            'consumable'
+            'helmet'
+            'cuirass'
+            'pistol'
+            'sword'
+            'amulet'
+            'implant'
+            'spell'
+          )
+          OnChange = cbCategoryChange
+          TabOrder = 2
+          Text = 'quest'
+        end
+        object Label3: TLabel
+          Left = 1
+          Height = 15
+          Top = 77
+          Width = 254
+          Align = alTop
+          Caption = 'Sellable'
+        end
+        object chbSellable: TCheckBox
+          Left = 1
+          Height = 19
+          Top = 92
+          Width = 254
+          Align = alTop
+          Caption = 'Is sellable'
+          TabOrder = 3
+        end
+        object Label4: TLabel
+          Left = 1
+          Height = 15
+          Top = 111
+          Width = 254
+          Align = alTop
+          Caption = 'Value'
+        end
+        object edValue: TEdit
+          Left = 1
+          Height = 23
+          Top = 126
+          Width = 254
+          Align = alTop
+          TabOrder = 4
+          Text = '0'
+        end
+        object Label5: TLabel
+          Left = 1
+          Height = 15
+          Top = 149
+          Width = 254
+          Align = alTop
+          Caption = 'Icon'
+        end
+        object edIcon: TEdit
+          Left = 1
+          Height = 23
+          Top = 164
+          Width = 254
+          Align = alTop
+          TabOrder = 5
+          Text = '/Game/artwork/images/itemicons/ico_combatknife.ico_combatknife'
+        end
+        object edStrBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 202
+          Width = 254
+          Align = alTop
+          TabOrder = 6
+          Text = '0'
+        end
+        object Label6: TLabel
+          Left = 1
+          Height = 15
+          Top = 187
+          Width = 254
+          Align = alTop
+          Caption = 'Strength bonus'
+        end
+        object edAgiBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 240
+          Width = 254
+          Align = alTop
+          TabOrder = 7
+          Text = '0'
+        end
+        object Label7: TLabel
+          Left = 1
+          Height = 15
+          Top = 225
+          Width = 254
+          Align = alTop
+          Caption = 'Agility bonus'
+        end
+        object Label8: TLabel
+          Left = 1
+          Height = 15
+          Top = 263
+          Width = 254
+          Align = alTop
+          Caption = 'Speed bonus'
+        end
+        object edSpdBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 278
+          Width = 254
+          Align = alTop
+          TabOrder = 8
+          Text = '0'
+        end
+        object Label9: TLabel
+          Left = 1
+          Height = 15
+          Top = 301
+          Width = 254
+          Align = alTop
+          Caption = 'Intelligence bonus'
+        end
+        object edIntBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 316
+          Width = 254
+          Align = alTop
+          TabOrder = 9
+          Text = '0'
+        end
+        object Label11: TLabel
+          Left = 1
+          Height = 15
+          Top = 339
+          Width = 254
+          Align = alTop
+          Caption = 'Gives perk'
+        end
+        object edPerk: TEdit
+          Left = 1
+          Height = 23
+          Top = 354
+          Width = 254
+          Align = alTop
+          TabOrder = 10
+          Text = '0'
+        end
+        object Label12: TLabel
+          Left = 1
+          Height = 15
+          Top = 377
+          Width = 254
+          Align = alTop
+          Caption = 'Damage'
+        end
+        object edDmg: TEdit
+          Left = 1
+          Height = 23
+          Top = 392
+          Width = 254
+          Align = alTop
+          TabOrder = 11
+          Text = '0'
+        end
+        object Label13: TLabel
+          Left = 1
+          Height = 15
+          Top = 415
+          Width = 254
+          Align = alTop
+          Caption = 'Str scl'
+        end
+        object edStrScl: TEdit
+          Left = 1
+          Height = 23
+          Top = 430
+          Width = 254
+          Align = alTop
+          TabOrder = 12
+          Text = '0'
+        end
+        object Label14: TLabel
+          Left = 1
+          Height = 15
+          Top = 453
+          Width = 254
+          Align = alTop
+          Caption = 'Agi scl'
+        end
+        object edAgiScl: TEdit
+          Left = 1
+          Height = 23
+          Top = 468
+          Width = 254
+          Align = alTop
+          TabOrder = 13
+          Text = '0'
+        end
+        object Label15: TLabel
+          Left = 1
+          Height = 15
+          Top = 491
+          Width = 254
+          Align = alTop
+          Caption = 'Spd scl'
+        end
+        object edSpdScl: TEdit
+          Left = 1
+          Height = 23
+          Top = 506
+          Width = 254
+          Align = alTop
+          TabOrder = 14
+          Text = '0'
+        end
+        object Label16: TLabel
+          Left = 1
+          Height = 15
+          Top = 529
+          Width = 254
+          Align = alTop
+          Caption = 'Int scl'
+        end
+        object EdIntScl: TEdit
+          Left = 1
+          Height = 23
+          Top = 544
+          Width = 254
+          Align = alTop
+          TabOrder = 15
+          Text = '0'
+        end
+        object Label17: TLabel
+          Left = 1
+          Height = 15
+          Top = 567
+          Width = 254
+          Align = alTop
+          Caption = 'Crit bonus'
+        end
+      end
+      object Panel3: TPanel
+        Left = 266
+        Height = 655
+        Top = 0
+        Width = 365
+        Align = alClient
+        BorderSpacing.Left = 10
+        ClientHeight = 655
+        ClientWidth = 365
+        TabOrder = 1
+        object Label18: TLabel
+          Left = 1
+          Height = 15
+          Top = 1
+          Width = 363
+          Align = alTop
+          Caption = 'Base Accuracy'
+        end
+        object edBaseAcc: TEdit
+          Left = 1
+          Height = 23
+          Top = 16
+          Width = 363
+          Align = alTop
+          TabOrder = 0
+          Text = '0'
+        end
+        object Label19: TLabel
+          Left = 1
+          Height = 15
+          Top = 39
+          Width = 363
+          Align = alTop
+          Caption = 'Reload Time'
+        end
+        object edReloadTime: TEdit
+          Left = 1
+          Height = 23
+          Top = 54
+          Width = 363
+          Align = alTop
+          TabOrder = 1
+          Text = '0'
+        end
+        object Label20: TLabel
+          Left = 1
+          Height = 15
+          Top = 77
+          Width = 363
+          Align = alTop
+          Caption = 'Dmg Type'
+        end
+        object cbDmgType: TComboBox
+          Left = 1
+          Height = 23
+          Top = 92
+          Width = 363
+          Align = alTop
+          ItemHeight = 15
+          Items.Strings = (
+            'blunt'
+            'sharp'
+            'energy'
+            'other'
+            'bullet'
+          )
+          OnChange = cbCategoryChange
+          TabOrder = 2
+          Text = 'quest'
+        end
+        object Label21: TLabel
+          Left = 1
+          Height = 15
+          Top = 115
+          Width = 363
+          Align = alTop
+          Caption = 'Description (NO LINE BREAKS ALLOWED)'
+        end
+        object memoDescription: TMemo
+          Left = 1
+          Height = 90
+          Top = 130
+          Width = 363
+          Align = alTop
+          Lines.Strings = (
+            'memoDescription'
+          )
+          ScrollBars = ssVertical
+          TabOrder = 3
+        end
+        object Label22: TLabel
+          Left = 1
+          Height = 15
+          Top = 220
+          Width = 363
+          Align = alTop
+          Caption = 'Stamina drain'
+        end
+        object edStaminaDrain: TEdit
+          Left = 1
+          Height = 23
+          Top = 235
+          Width = 363
+          Align = alTop
+          TabOrder = 4
+          Text = '0'
+        end
+        object Label23: TLabel
+          Left = 1
+          Height = 15
+          Top = 258
+          Width = 363
+          Align = alTop
+          Caption = 'Mana Drain'
+        end
+        object edManaDrain: TEdit
+          Left = 1
+          Height = 23
+          Top = 273
+          Width = 363
+          Align = alTop
+          TabOrder = 5
+          Text = '0'
+        end
+        object Label24: TLabel
+          Left = 1
+          Height = 15
+          Top = 296
+          Width = 363
+          Align = alTop
+          Caption = 'Armour Bonus'
+        end
+        object edArmorBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 311
+          Width = 363
+          Align = alTop
+          TabOrder = 6
+          Text = '0'
+        end
+        object Label25: TLabel
+          Left = 1
+          Height = 15
+          Top = 334
+          Width = 363
+          Align = alTop
+          Caption = 'Shield Bonus'
+        end
+        object edShldBon: TEdit
+          Left = 1
+          Height = 23
+          Top = 349
+          Width = 363
+          Align = alTop
+          TabOrder = 7
+          Text = '0'
+        end
+        object Label26: TLabel
+          Left = 1
+          Height = 15
+          Top = 372
+          Width = 363
+          Align = alTop
+          Caption = 'Provides Spell (numeric ID)'
+        end
+        object edSpell: TEdit
+          Left = 1
+          Height = 23
+          Top = 387
+          Width = 363
+          Align = alTop
+          TabOrder = 8
+          Text = '0'
+        end
+        object Button3: TButton
+          Left = 1
+          Height = 25
+          Top = 410
+          Width = 363
+          Align = alTop
+          Caption = 'Update'
+          TabOrder = 9
+        end
+      end
+      object Panel4: TPanel
+        Left = 0
+        Height = 50
+        Top = 655
+        Width = 631
+        Align = alBottom
+        ClientHeight = 50
+        ClientWidth = 631
+        TabOrder = 2
+        object btnAdd: TButton
+          Left = 1
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'ADD'
+          OnClick = btnAddClick
+          TabOrder = 0
+        end
+        object btnRem: TButton
+          Left = 76
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'Remove'
+          OnClick = btnRemClick
+          TabOrder = 1
+        end
+        object btnSave: TButton
+          Left = 451
+          Height = 48
+          Top = 1
+          Width = 80
+          Align = alLeft
+          Caption = 'SAVE'
+          OnClick = btnSaveClick
+          TabOrder = 2
+        end
+        object btnLoad: TButton
+          Left = 531
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'LOAD'
+          OnClick = btnLoadClick
+          TabOrder = 3
+        end
+        object btnLoad1: TButton
+          Left = 226
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'Set Path'
+          OnClick = btnLoad1Click
+          TabOrder = 4
+        end
+        object Button1: TButton
+          Left = 301
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'Build'
+          OnClick = Button1Click
+          TabOrder = 5
+        end
+        object Button2: TButton
+          Left = 376
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'Make'
+          OnClick = Button2Click
+          TabOrder = 6
+        end
+        object btnRem1: TButton
+          Left = 151
+          Height = 48
+          Top = 1
+          Width = 75
+          Align = alLeft
+          Caption = 'Update'
+          OnClick = btnRem1Click
+          TabOrder = 7
+        end
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.idb'
+    Filter = 'Items database (*.idb)|*.idb|All Files (*.*)|*.*'
+    Left = 1080
+    Top = 56
+  end
+end
