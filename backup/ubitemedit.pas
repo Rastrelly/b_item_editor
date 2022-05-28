@@ -13,7 +13,7 @@ type
     name, category, sellable, value, icon, str_bon, agi_bon, spd_bon,
     int_bon, gives_perk, dmg, str_scl, agi_scl, spd_scl, int_scl, crit_bon,
     base_accuracy, reload_time, dmg_time, description, stamina_dtain, mana_drain,
-    armor_bonus, shield_bonus, provides_spell:string;
+    armor_bonus, shield_bonus, provides_spell, bulltype, pellets:string;
   end;
 
   { TForm1 }
@@ -31,6 +31,8 @@ type
     chbSellable: TCheckBox;
     cbCategory: TComboBox;
     cbDmgType: TComboBox;
+    edBullType: TEdit;
+    edPellets: TEdit;
     edtSetSize: TEdit;
     edPerk: TEdit;
     edDmg: TEdit;
@@ -74,6 +76,8 @@ type
     Label24: TLabel;
     Label25: TLabel;
     Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -130,7 +134,7 @@ implementation
 procedure TForm1.LoadSettings;
 var fn,wf:string;
 begin
-  fn:=appfolder+'settings.cfg';
+  fn:=appfolder+'settings_ie.cfg';
   if FileExists(fn) then
   begin
     AssignFile(f,fn);
@@ -144,7 +148,7 @@ end;
 procedure TForm1.SaveSettings;
 var fn:string;
 begin
-  fn:=appfolder+'settings.cfg';
+  fn:=appfolder+'settings_ie.cfg';
   AssignFile(f,fn);
   Rewrite(f);
   WriteLn(f,edtPath.Text);
@@ -223,6 +227,8 @@ begin
     edArmorBon.Text:=armor_bonus;
     edShldBon.Text:=shield_bonus;
     edSpell.Text:=provides_spell;
+    edBullType.Text:=bulltype;
+    edPellets.Text:=pellets;
   end;
 end;
 
@@ -268,6 +274,8 @@ begin
     armor_bonus:=edArmorBon.Text;
     shield_bonus:=edShldBon.Text;
     provides_spell:=edSpell.Text;
+    bulltype:=edBullType.Text;
+    pellets:=edPellets.text;
   end;
   listitms;;
 end;
@@ -342,8 +350,10 @@ begin
     if (k=22) then armor_bonus:=memoPreview.Lines[i];
     if (k=23) then shield_bonus:=memoPreview.Lines[i];
     if (k=24) then provides_spell:=memoPreview.Lines[i];
+    if (k=25) then bulltype:=memoPreview.Lines[i];
+    if (k=26) then pellets:=memoPreview.Lines[i];
     inc(k);
-    if k>=25 then
+    if k>=27 then
     begin
       k:=0;
       SetLength(itms, length(itms)+1);
@@ -388,6 +398,8 @@ begin
     memoPreview.Lines.Add(armor_bonus);
     memoPreview.Lines.Add(shield_bonus);
     memoPreview.Lines.Add(provides_spell);
+    memoPreview.Lines.Add(bulltype);
+    memoPreview.Lines.Add(pellets);
   end;
 end;
 
