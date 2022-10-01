@@ -13,7 +13,7 @@ type
     name, category, sellable, value, icon, str_bon, agi_bon, spd_bon,
     int_bon, gives_perk, dmg, str_scl, agi_scl, spd_scl, int_scl, crit_bon,
     base_accuracy, reload_time, dmg_time, description, stamina_dtain, mana_drain,
-    armor_bonus, shield_bonus, provides_spell, bulltype, pellets:string;
+    armor_bonus, shield_bonus, provides_spell, bulltype, pellets, meshref:string;
   end;
 
   { TForm1 }
@@ -27,13 +27,12 @@ type
     btnLoad: TButton;
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
     chbSellable: TCheckBox;
     cbCategory: TComboBox;
     cbDmgType: TComboBox;
     edBullType: TEdit;
     edPellets: TEdit;
-    edtSetSize: TEdit;
+    edMeshRef: TEdit;
     edPerk: TEdit;
     edDmg: TEdit;
     edStrScl: TEdit;
@@ -78,6 +77,7 @@ type
     Label26: TLabel;
     Label27: TLabel;
     Label28: TLabel;
+    Label29: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -93,6 +93,7 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
+    procedure Button3Click(Sender: TObject);
     procedure removeitem(id:integer);
     procedure btnAddClick(Sender: TObject);
     procedure btnLoad1Click(Sender: TObject);
@@ -191,7 +192,7 @@ var i:integer;
 begin
   lbName.Clear;
   if length(itms)>0 then begin
-    for i:=0 to Length(itms)-1 do lbName.AddItem(inttostr(i)+') '+itms[i].name+' ('+itms[i].category+')',lbName);
+    for i:=0 to Length(itms)-1 do lbName.AddItem(inttostr(i+1)+') '+itms[i].name+' ('+itms[i].category+')',lbName);
   end;
 end;
 
@@ -229,6 +230,7 @@ begin
     edSpell.Text:=provides_spell;
     edBullType.Text:=bulltype;
     edPellets.Text:=pellets;
+    edMeshRef.Text:=meshref;
   end;
 end;
 
@@ -242,6 +244,11 @@ begin
     itms[i]:=itms[i+1];
   end;
   setlength(itms,length(itms)-1);
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.updateitem(id:integer);
@@ -276,6 +283,7 @@ begin
     provides_spell:=edSpell.Text;
     bulltype:=edBullType.Text;
     pellets:=edPellets.text;
+    meshref:=edMeshRef.Text;
   end;
   listitms;;
 end;
@@ -323,37 +331,41 @@ begin
   sz:=strtoint(edtSetSize.Text);
   for i := 1 to memoPreview.Lines.Count do
   begin
-  with titm do
-  begin
-    if (k=0) then name:=memoPreview.Lines[i];
-    if (k=1) then category:=memoPreview.Lines[i];
-    if (k=2) then sellable:=memoPreview.Lines[i];
-    if (k=3) then value:=memoPreview.Lines[i];
-    if (k=4) then icon:=memoPreview.Lines[i];
-    if (k=5) then str_bon:=memoPreview.Lines[i];
-    if (k=6) then agi_bon:=memoPreview.Lines[i];
-    if (k=7) then spd_bon:=memoPreview.Lines[i];
-    if (k=8) then int_bon:=memoPreview.Lines[i];
-    if (k=9) then gives_perk:=memoPreview.Lines[i];
-    if (k=10) then dmg:=memoPreview.Lines[i];
-    if (k=11) then str_scl:=memoPreview.Lines[i];
-    if (k=12) then agi_scl:=memoPreview.Lines[i];
-    if (k=13) then spd_scl:=memoPreview.Lines[i];
-    if (k=14) then int_scl:=memoPreview.Lines[i];
-    if (k=15) then crit_bon:=memoPreview.Lines[i];
-    if (k=16) then base_accuracy:=memoPreview.Lines[i];
-    if (k=17) then reload_time:=memoPreview.Lines[i];
-    if (k=18) then dmg_time:=memoPreview.Lines[i];
-    if (k=19) then description:=memoPreview.Lines[i];
-    if (k=20) then stamina_dtain:=memoPreview.Lines[i];
-    if (k=21) then mana_drain:=memoPreview.Lines[i];
-    if (k=22) then armor_bonus:=memoPreview.Lines[i];
-    if (k=23) then shield_bonus:=memoPreview.Lines[i];
-    if (k=24) then provides_spell:=memoPreview.Lines[i];
-    if (k=25) then bulltype:=memoPreview.Lines[i];
-    if (k=26) then pellets:=memoPreview.Lines[i];
+    with titm do
+    begin
+      if  memoPreview.Lines[i]<>'&' then
+      begin
+        if (k=0) then name:=memoPreview.Lines[i];
+        if (k=1) then category:=memoPreview.Lines[i];
+        if (k=2) then sellable:=memoPreview.Lines[i];
+        if (k=3) then value:=memoPreview.Lines[i];
+        if (k=4) then icon:=memoPreview.Lines[i];
+        if (k=5) then str_bon:=memoPreview.Lines[i];
+        if (k=6) then agi_bon:=memoPreview.Lines[i];
+        if (k=7) then spd_bon:=memoPreview.Lines[i];
+        if (k=8) then int_bon:=memoPreview.Lines[i];
+        if (k=9) then gives_perk:=memoPreview.Lines[i];
+        if (k=10) then dmg:=memoPreview.Lines[i];
+        if (k=11) then str_scl:=memoPreview.Lines[i];
+        if (k=12) then agi_scl:=memoPreview.Lines[i];
+        if (k=13) then spd_scl:=memoPreview.Lines[i];
+        if (k=14) then int_scl:=memoPreview.Lines[i];
+        if (k=15) then crit_bon:=memoPreview.Lines[i];
+        if (k=16) then base_accuracy:=memoPreview.Lines[i];
+        if (k=17) then reload_time:=memoPreview.Lines[i];
+        if (k=18) then dmg_time:=memoPreview.Lines[i];
+        if (k=19) then description:=memoPreview.Lines[i];
+        if (k=20) then stamina_dtain:=memoPreview.Lines[i];
+        if (k=21) then mana_drain:=memoPreview.Lines[i];
+        if (k=22) then armor_bonus:=memoPreview.Lines[i];
+        if (k=23) then shield_bonus:=memoPreview.Lines[i];
+        if (k=24) then provides_spell:=memoPreview.Lines[i];
+        if (k=25) then bulltype:=memoPreview.Lines[i];
+        if (k=26) then pellets:=memoPreview.Lines[i];
+        if (k=27) then meshref:=memoPreview.Lines[i];
+    end;
     inc(k);
-    if k>=27 then
+    if memoPreview.Lines[i]='&' then
     begin
       k:=0;
       SetLength(itms, length(itms)+1);
@@ -369,7 +381,7 @@ procedure tform1.buildlist;
 var i:integer;
 begin
   memoPreview.Clear;
-  memoPreview.Lines.Add(inttostr(25));
+  memoPreview.Lines.Add(edtSetSize.text);
   for i:=0 to length(itms)-1 do
   with itms[i] do
   begin
@@ -400,7 +412,10 @@ begin
     memoPreview.Lines.Add(provides_spell);
     memoPreview.Lines.Add(bulltype);
     memoPreview.Lines.Add(pellets);
+    memoPreview.Lines.Add(meshref);
+    memoPreview.Lines.Add('&');
   end;
+
 end;
 
 end.
